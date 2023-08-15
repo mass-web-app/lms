@@ -37,7 +37,7 @@
                        name="password" required autocomplete="new-password"   placeholder="رمز عبور">
 
 
-                <input type="text" class="txt txt-l @error('password_confirmation') is-invalid @enderror"
+                <input type="password" class="txt txt-l @error('password_confirmation') is-invalid @enderror"
                        name="password_confirmation" required  placeholder="تکرار رمز عبور">
                 @error('password')
                 <span class="invalid-feedback" role="alert">
