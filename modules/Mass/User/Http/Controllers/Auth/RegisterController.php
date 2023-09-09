@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Mass\User\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use App\Models\User;
-use App\Rules\ValidMobileRule;
-use App\Rules\ValidPasswordRule;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Mass\User\Rules\ValidMobileRule;
+use Mass\User\Rules\ValidPasswordRule;
 
 class RegisterController extends Controller
 {
@@ -67,7 +67,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        dd('passwesz');
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

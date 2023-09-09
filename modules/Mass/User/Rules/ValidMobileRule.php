@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Rules;
+namespace Mass\User\Rules;
 
 use Closure;
 use Illuminate\Contracts\Validation\ValidationRule;
 
-class ValidPasswordRule implements ValidationRule
+class ValidMobileRule implements ValidationRule
 {
     /**
      * Run the validation rule.
@@ -14,10 +14,10 @@ class ValidPasswordRule implements ValidationRule
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        preg_match('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/',$value,$matches);
-        if (empty($matches)){
-            $fail('رمز عبور معتبر نیست');
-        }
+         preg_match('/^9[0-9]{9}/',$value,$matches);
+         if (empty($matches)){
+             $fail('تلفن همراه معتبر نیست');
+         }
 
     }
 }
